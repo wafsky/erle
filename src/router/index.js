@@ -19,10 +19,16 @@ const router = new VueRouter({
             path: "/comment",
             name: "Comment",
             component: () => import("../views/comment/index.vue"),
-        }, {
+        }, 
+        {
             path: "/business",
             name: "Business",
             component: () => import("../views/business/index.vue"),
+        },
+        {
+            path: "/alert",
+            name: "Alert",
+            component: () => import("../views/alert/index.vue"),
         },
     ],
     linkActiveClass: "active"
