@@ -21,6 +21,7 @@
       5个
       <span>&gt; </span>
     </div>
+    
   </div>
 </template>
 
@@ -110,5 +111,6 @@ button {
     right: 12px;
     bottom: 20px;
   }
+  
 }
 </style>
