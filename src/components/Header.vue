@@ -107,9 +107,11 @@ button {
     background: rgba(0, 0, 0, 0.5);
     color: #fff;
     line-height: 24px;
+    
     position: absolute;
     right: 12px;
     bottom: 20px;
+    
   }
   
 }

@@ -60,15 +60,9 @@ export default {
 .nav ul li {
   flex: 1;
   height: 40px;
+  line-height: 24px;
 }
 .nav ul li.active {
   color: skyblue;
-}
-.nav ul i {
-  font-size: 20px;
-}
-.nav ul p {
-  font-size: 12px;
-  line-height: 18px;
 }
 </style>
