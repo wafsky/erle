@@ -1,6 +1,7 @@
 <template>
   <div class="nav">
     <div class="bottom">
+      <button>公告</button>
       <p>
         粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，
         由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深
@@ -30,21 +31,32 @@ export default {
 
 <style scoped>
 .bottom {
-  width: 100%;
   height: 20px;
   background: rgba(0, 0, 0, 0.5);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+
   color: #fff;
+
+  font-size: 10px;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
 }
 .bottom p {
+  text-indent: 6px;
   line-height: 20px;
   width: 100%;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
+.bottom button {
+  width: 30px;
+  height: 12px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.5);
+  border: none;
+}
+
 .nav {
   width: 100%;
   height: 50px;
@@ -60,9 +72,15 @@ export default {
 .nav ul li {
   flex: 1;
   height: 40px;
-  line-height: 24px;
 }
 .nav ul li.active {
   color: skyblue;
+}
+.nav ul i {
+  font-size: 20px;
+}
+.nav ul p {
+  font-size: 12px;
+  line-height: 18px;
 }
 </style>
