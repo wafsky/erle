@@ -1,6 +1,6 @@
 <template>
   <div class="nav">
-    <div class="bottom">
+    <div class="bottom" @click="alert">
       <button>公告</button>
       <p>
         粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，
@@ -24,8 +24,14 @@ export default {
     return {};
   },
   created() {},
-  methods: {},
-  components: {},
+  methods: {
+    alert() {
+      this.$router.push({
+        path: "/alert"
+      });
+    }
+  },
+  components: {}
 };
 </script>
 
@@ -59,28 +65,23 @@ export default {
 
 .nav {
   width: 100%;
-  height: 50px;
+  height: 60px;
   background: white;
-  border-bottom: 2px #ebe8e3 solid;
+  border-bottom: 1px #cecece solid;
 }
 .nav ul {
   display: flex;
   text-align: center;
-  height: 50px;
+  height: 40px;
   align-items: center;
 }
 .nav ul li {
   flex: 1;
   height: 40px;
+  line-height: 40px;
+  font-size: 14px;
 }
 .nav ul li.active {
-  color: skyblue;
-}
-.nav ul i {
-  font-size: 20px;
-}
-.nav ul p {
-  font-size: 12px;
-  line-height: 18px;
+  color: red;
 }
 </style>

@@ -17,9 +17,29 @@ const router = new VueRouter({
         },
         {
             path: "/comment",
+            redirect: "/comment/total",
             name: "Comment",
             component: () => import("../views/comment/index.vue"),
-        }, 
+            children: [
+
+                {
+                    path: "total",
+                    name: "Total",
+                    component: () => import("../views/comment/eval/total.vue")
+                },
+                {
+                    path: "good",
+                    name: "Good",
+                    component: () => import("../views/comment/eval/good.vue")
+                },
+                {
+                    path: "bad",
+                    name: "Bad",
+                    component: () => import("../views/comment/eval/bad.vue")
+                }
+            ],
+            linkActiveClass: "active"
+        },
         {
             path: "/business",
             name: "Business",
