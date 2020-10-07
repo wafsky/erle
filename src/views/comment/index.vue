@@ -9,13 +9,17 @@
       <ul class="right">
         <li>
           <span>服务态度</span>
-          <div>星星</div>
-          <div>4.1</div>
+          <div>
+            <Star score="4" style="font-size:20px"></Star>
+          </div>
+          <div class="sc">4.1</div>
         </li>
         <li>
           <span>服务态度</span>
-          <div>星星</div>
-          <div>4.1</div>
+          <div>
+            <Star score="4" style="font-size:20px"></Star>
+          </div>
+          <div class="sc">4.3</div>
         </li>
         <li>
           <span>送达时间</span>
@@ -36,13 +40,17 @@
 </template>
 
 <script>
+import Star from "../../components/star.vue";
+
 export default {
   data() {
     return {};
   },
   created() {},
   methods: {},
-  components: {}
+  components: {
+    Star
+  }
 };
 </script>
 
@@ -76,7 +84,7 @@ export default {
       padding: 0 24px;
       li {
         display: flex;
-        line-height: 24px;
+        line-height: 30px;
         font-size: 12px;
         span {
           display: block;
@@ -85,12 +93,16 @@ export default {
         p {
           color: #aaa;
         }
+        .sc {
+          padding: 0 5px;
+          color: orange;
+          font-size: 14px;
+        }
       }
     }
   }
   .con {
     .title {
-      width: 100%;
       padding: 18px 10px;
       display: flex;
       li {

@@ -12,8 +12,6 @@ export default {
     return {
       trues: [],
       falses: [],
-      light: "fa fa-star",
-      gray: "fa fa-star-o"
     };
   },
   props: {
@@ -24,7 +22,6 @@ export default {
   },
   methods: {},
   created() {
-    console.log(this.score);
     this.trues.length = this.score;
     this.falses.length = 5 - this.score;
   }
@@ -32,13 +29,15 @@ export default {
 </script>
 
 <style>
-.star {
-  height: 100%;
-}
+
 .fa-star {
   color: orange;
+  font-size: 100%;
+  line-height: 30px;
 }
 .fa-star-o {
   color: gray;
+  font-size: 100%;
+  line-height: 30px;
 }
 </style>

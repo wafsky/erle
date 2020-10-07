@@ -5,13 +5,15 @@
         <div class="left">
           <h3>粥品香坊（回龙观）</h3>
           <div class="star">
-            <span>星星</span>
+            <span>
+              <Star score="4" style="font-size:16px;"></Star>
+            </span>
             <span>(24)</span>
             <span>月售90单</span>
           </div>
         </div>
         <div class="right" @click="shouch" :class="{'active':isActive}">
-          <span :class="{'active':isActive}">♥</span>
+          <span :class="{'active':isActive}" class="fa fa-heart"></span>
           <p>{{ shouchang }}</p>
         </div>
       </div>
@@ -97,6 +99,8 @@
 </template>
 
 <script>
+import Star from "../../components/star.vue";
+
 export default {
   name: "Business",
   data() {
@@ -116,7 +120,9 @@ export default {
       }
     }
   },
-  components: {}
+  components: {
+    Star
+  }
 };
 </script>
 
@@ -140,6 +146,14 @@ export default {
         h3 {
           font-size: 14px;
           font-weight: 600;
+        }
+        .star {
+          line-height: 30px;
+          font-size: 14px;
+          display: flex;
+          span {
+            margin: 0 4px;
+          }
         }
       }
       .right {
@@ -204,7 +218,7 @@ export default {
         font-weight: 200;
         display: flex;
         overflow: auto;
-        
+
         img {
           height: 90px;
           margin: 0 2px;

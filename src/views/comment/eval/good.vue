@@ -11,8 +11,10 @@
             <div class="gray">2020-10-06 15:40</div>
           </div>
           <div class="mids">
-            <div class="star">星星</div>
-            <div class="gray">30分钟送达</div>
+            <div class="star">
+              <Star score="4"></Star>
+            </div>
+            <div class="gray times">30分钟送达</div>
           </div>
           <p>不错,粥很好喝,我经常吃这一家,非常赞,以后也会常来吃,强烈推荐.</p>
         </div>
@@ -27,8 +29,10 @@
             <div class="gray">2020-10-06 15:40</div>
           </div>
           <div class="mids">
-            <div class="star">星星</div>
-            <div class="gray">30分钟送达</div>
+            <div class="star">
+              <Star score="5"></Star>
+            </div>
+            <div class="gray times">30分钟送达</div>
           </div>
           <p>不错,粥很好喝,我经常吃这一家,非常赞,以后也会常来吃,强烈推荐.</p>
         </div>
@@ -43,8 +47,10 @@
             <div class="gray">2020-10-06 15:40</div>
           </div>
           <div class="mids">
-            <div class="star">星星</div>
-            <div class="gray">30分钟送达</div>
+            <div class="star">
+              <Star score="4"></Star>
+            </div>
+            <div class="gray times">30分钟送达</div>
           </div>
           <p>不错,粥很好喝,我经常吃这一家,非常赞,以后也会常来吃,强烈推荐.</p>
         </div>
@@ -59,8 +65,10 @@
             <div class="gray">2020-10-06 15:40</div>
           </div>
           <div class="mids">
-            <div class="star">星星</div>
-            <div class="gray">30分钟送达</div>
+            <div class="star">
+              <Star score="5"></Star>
+            </div>
+            <div class="gray times">30分钟送达</div>
           </div>
           <p>不错,粥很好喝,我经常吃这一家,非常赞,以后也会常来吃,强烈推荐.</p>
         </div>
@@ -75,8 +83,10 @@
             <div class="gray">2020-10-06 15:40</div>
           </div>
           <div class="mids">
-            <div class="star">星星</div>
-            <div class="gray">30分钟送达</div>
+            <div class="star">
+              <Star score="4"></Star>
+            </div>
+            <div class="gray times times">30分钟送达</div>
           </div>
           <p>不错,粥很好喝,我经常吃这一家,非常赞,以后也会常来吃,强烈推荐.</p>
         </div>
@@ -86,7 +96,12 @@
 </template>
 
 <script>
-export default {};
+import Star from "../../../components/star.vue";
+export default {
+  components: {
+    Star
+  }
+};
 </script>
 
 <style scoped lang="scss">
@@ -111,11 +126,16 @@ export default {};
       }
       .right {
         line-height: 20px;
+        width: 335px;
+
         div {
           display: flex;
 
           .gray {
             color: #888;
+          }
+          .times {
+            text-indent: 10px;
           }
         }
         .tops {
@@ -123,6 +143,9 @@ export default {};
         }
         p {
           color: #000;
+        }
+        .mids {
+          line-height: 30px;
         }
       }
     }

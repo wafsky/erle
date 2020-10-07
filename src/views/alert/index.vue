@@ -2,7 +2,9 @@
   <div class="container">
     <div class="content">
       <h3>粥品香坊（回龙观）</h3>
-      <div class="star">星星点评</div>
+      <div class="star">
+        <Star score="4" style="font-size: 24px; line-height: 40px; margin: 10px 0"></Star>
+      </div>
       <fieldset>
         <legend>优惠信息</legend>
         <ul>
@@ -31,17 +33,17 @@
       <fieldset>
         <legend>商家公告</legend>
         <ul>
-          <li>
-            粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。
-          </li>
+          <li>粥品香坊其烹饪粥料的秘方源于中国千年古法，在融和现代制作工艺，由世界烹饪大师屈浩先生领衔研发。坚守纯天然、0添加的良心品质深得消费者青睐，发展至今成为粥类的引领品牌。是2008年奥运会和2013年园博会指定餐饮服务商。</li>
         </ul>
       </fieldset>
     </div>
-    <button @click="back">back</button>
+    <span class="fa fa-close" @click="back"></span>
   </div>
 </template>
 
 <script>
+import Star from "../../components/star.vue";
+
 export default {
   name: "Alert",
 
@@ -54,7 +56,9 @@ export default {
       history.go(-1);
     }
   },
-  components: {}
+  components: {
+    Star
+  }
 };
 </script>
 
@@ -82,7 +86,7 @@ export default {
     }
     fieldset {
       width: 300px;
-      margin: 0 auto;
+      margin: 20px auto 0;
       border: none;
       border-top: 1px solid rgba(255, 255, 255, 0.8);
       legend {
@@ -98,13 +102,13 @@ export default {
           padding: 0 10px;
           height: 28px;
           line-height: 28px;
-          button {
-            color: red;
-            margin: 0 10px;
-          }
         }
       }
     }
+  }
+  .fa-close {
+    font-weight: 500;
+    font-size: 30px;
   }
 }
 </style>

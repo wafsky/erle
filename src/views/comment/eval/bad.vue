@@ -11,15 +11,17 @@
             <div class="gray">2020-10-06 15:40</div>
           </div>
           <div class="mids">
-            <div class="star">星星</div>
-            <div class="gray">70分钟送达</div>
+            <div class="star">
+              <Star score="3"></Star>
+            </div>
+            <div class="gray times">70分钟送达</div>
           </div>
           <p>速度贼慢，垃圾</p>
         </div>
       </li>
       <li>
         <div class="left">
-          <img src="http://static.galileo.xiaojukeji.com/static/tms/default_header.png" alt />
+          <img src="http://static.galileo.xiaojukeji.com/static/tms/default_header.png" />
         </div>
         <div class="right">
           <div class="tops">
@@ -27,14 +29,15 @@
             <div class="gray">2020-10-06 15:40</div>
           </div>
           <div class="mids">
-            <div class="star">星星</div>
-            <div class="gray">70分钟送达</div>
+            <div class="star">
+              <Star score="2"></Star>
+            </div>
+            <div class="gray times">70分钟送达</div>
           </div>
           <p>速度贼慢，垃圾</p>
         </div>
       </li>
     </ul>
-    <Star score="3"></Star>
   </div>
 </template>
 
@@ -49,7 +52,6 @@ export default {
 
 <style scoped lang="scss">
 .container {
-  width: 100%;
   height: 100%;
   background: #fff;
   ul {
@@ -69,10 +71,14 @@ export default {
       }
       .right {
         line-height: 20px;
+        width: 335px;
         div {
           display: flex;
           .gray {
             color: #888;
+          }
+          .times {
+            text-indent: 10px;
           }
         }
         .tops {
@@ -80,6 +86,10 @@ export default {
         }
         p {
           color: #000;
+        }
+        .mids {
+          line-height: 30px;
+          
         }
       }
     }
