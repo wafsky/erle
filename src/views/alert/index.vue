@@ -102,6 +102,10 @@ export default {
           padding: 0 10px;
           height: 28px;
           line-height: 28px;
+          button {
+            color: red;
+            margin: 0 10px;
+          }
         }
       }
     }

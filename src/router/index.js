@@ -21,7 +21,6 @@ const router = new VueRouter({
             name: "Comment",
             component: () => import("../views/comment/index.vue"),
             children: [
-
                 {
                     path: "total",
                     name: "Total",
@@ -49,6 +48,11 @@ const router = new VueRouter({
             path: "/alert",
             name: "Alert",
             component: () => import("../views/alert/index.vue"),
+        },
+        {
+            path: "/detail/:id/:name",
+            name: "Detail",
+            component: () => import("../views/detail/index.vue"),
         },
     ],
     linkActiveClass: "active"

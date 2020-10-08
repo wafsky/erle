@@ -16,7 +16,12 @@
         <li class="first">
           <h4>{{ items.name }}</h4>
         </li>
-        <li class="two" v-for="(item, index) in items.foods" :key="index">
+        <li
+          class="two"
+          v-for="(item, index) in items.foods"
+          :key="index"
+          @click="goDetail(items._id,item.name)"
+        >
           <img :src="item.image" />
           <div class="con">
             <h5>{{ item.name }}</h5>
@@ -31,17 +36,20 @@
           </div>
           <div class="add">
             <span class="nums fa fa-minus"></span>
-            <div class="num">0</div>
-            <span class="nums fa fa-plus"></span>
+            <div class="num">{{ $store.state.shopList[index].count }}</div>
+            <span class="nums fa fa-plus" @click.stop="add(index)"></span>
           </div>
         </li>
       </ul>
     </div>
+
+    <ShopCart></ShopCart>
   </div>
 </template>
 
 <script>
 import axios from "axios";
+import ShopCart from "../../components/ShopCart.vue";
 export default {
   data() {
     return {
@@ -54,17 +62,43 @@ export default {
   },
   methods: {
     getData() {
-      console.log("aaa");
       axios.get("/list").then(res => {
         console.log(res.data);
         this.list = res.data.list;
+
+        if (this.$store.state.shopList.length == 0) {
+          var li = res.data.list;
+          var data = [];
+          for (let i = 0; i < li.length; i++) {
+            for (let j = 0; j < li[i].foods.length; j++) {
+              data.push({
+                name: li[i].foods[j].name,
+                price: li[i].foods[j].price,
+                count: 0
+              });
+            }
+          }
+          this.$store.commit("init", data);
+          console.log(this.$store.state.shopList);
+        }
       });
     },
+
     choose(index) {
       this.isActive = index;
+    },
+    goDetail(id, name) {
+      this.$router.push({
+        path: `/detail/${id}/${name}`
+      });
+    },
+    add(index) {
+      this.$store.state.shopList[index].count++;
     }
   },
-  components: {}
+  components: {
+    ShopCart
+  }
 };
 </script>
 
@@ -129,7 +163,7 @@ export default {
               }
               .oldPr {
                 line-height: 24px;
-                text-decoration:line-through;  
+                text-decoration: line-through;
               }
             }
           }

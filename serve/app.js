@@ -11,7 +11,7 @@ app.use(cors())
 
 
 app.get("/list", (req, res) => {
-    console.log("aa")
+
     Goods.find().then(mon => {
         if (mon) {
             res.json({
@@ -21,7 +21,17 @@ app.get("/list", (req, res) => {
         }
     })
 })
-
+app.get("/type/:id", (req, res) => {
+    const id = req.params.id
+    Goods.findById(id).then(mon => {
+        if (mon) {
+            res.json({
+                code: 20000,
+                data: mon
+            })
+        }
+    })
+})
 
 
 
